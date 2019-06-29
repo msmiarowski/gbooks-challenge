@@ -1,18 +1,36 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <title>Google Books Search Engine</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Google Books search using Google Books API">
+
+    <title>Google Books Search</title>
     <!-- fetch polyfill if your browser doesn't support fetch -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script> -->
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div id="search-area">
-      <input id="search-bar" type="text" placeholder="Input search term here">
-      <button id="search-btn">Search</button>
-    </div>
-    <div id="results-area">
-      <ul id="results"></ul>
-    </div>
+    <main id="container">
+        <h1 class="screen-reader-text">Search for books using the Google Books API</h1>
+        <div id="search-area">
+            <label for="search-bar" id="search-label">Search Books</label>
+            <input id="search-bar" type="text" onfocus="this.value=''" placeholder=""> 
+            <button id="search-btn">Search</button>
+            <button id="clear-search" onclick="window.location.reload();">Clear Search</button>
+        </div>
+      
+        <div id="results-area">
+          <ul id="results">
+            <!-- show search results here -->
+          </ul>
+        </div>
+      
+      </main>
+      
+    
     <script src="main.js"></script>
     <!-- for babel transpilation -->
     <!-- <script src="main.min.js"></script> -->

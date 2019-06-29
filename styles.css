@@ -1,3 +1,171 @@
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700,900&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+:root {
+  --white: #ffffff;
+  --neutral: #efefef;
+  --carbon: #a9a9a9;
+  --watermelon: #EB0004;
+  --redish: #D4441C;
+  --ink: #062f4f;
+}
+:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+}
+body {
+  background-color: var(--neutral);
+  font: 400 1em/1.25em 'Montserrat', sans-serif;
+}
+a {
+  transition: all 0.3s ease;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.screen-reader-text {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+#container {
+  max-width: 45em;
+  margin: 2em auto;
+  padding: 1em;
+}
+/* --------------------
+search box 
+-------------------- */
+#search-area {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  max-width: 20em;
+  margin: 0 auto 2em auto;
+}
+#search-label {
+  font-size: .875em;
+  font-weight: 700;
+  color: var(--ink);
+}
+#search-bar {
+  padding: .25em;
+  border: solid 1px var(--carbon);
+}
+#search-btn {
+  max-width: 50%;
+  margin: 1em auto 0 auto;
+  background-color: var(--redish);
+  color: var(--white);
+  border: none;
+  padding: .5em 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#search-btn:hover {
+  background-color: var(--watermelon);
+}
+/* --------------------
+ clear search button 
+-------------------- */
+#clear-search {
+  background: transparent;
+  border: none;
+  font-size: .75em;
+  color: var(--ink);
+  cursor: pointer;
+  max-width: 50%;
+  margin: 1em auto 0 auto;
+  padding: .25em .5em;
+}
+
+/* --------------------
+results area 
+-------------------- */
+#results li.book-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: dotted 2px var(--carbon);
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+}
+#results li .details {
+  text-align: center;
+  margin-top: 1.5em;
+}
+#results .details h3.title {
+  margin-top: 0;
+}
+#results .details h3 {
+  margin: .75em 0 .25em 0;
+  font-size: 1.125em;
+}
+#results .details h4 {
+  margin: .5em 0;
+  font-weight: 400;
+}
+#results .details h4 .sub-title {
+  font-style: italic;
+}
+#results ul.authors {
+  margin-bottom: 2em;
+}
+#results ul.authors li {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+#results li .details .more {
+  background-color: var(--redish);
+  color: var(--white);
+  padding: .25em .5em;
+  text-decoration: none;
+}
+#results li .details .more:hover {
+  background-color: var(--watermelon);
+}
+/* --------------------
+user search li 
+-------------------- */
+#results li.user-search {
+  background-color: var(--ink);
+  color: var(--neutral);
+  padding: 1em;
+  margin-bottom: 2em;
+}
+#results li.user-search h2 {
+  margin: 0;
+  font-weight: 400;
+}
+#results li.user-search h2 span {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* --------------------
+error message 
+-------------------- */
 .error {
-  color: red;
+  color: var(--redish);
+  font-weight: 900;
+  font-size: 1.25em;
+}
+
+@media only screen and (min-width: 37.5em) {
+  #results li.book-info {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  #results li .details {
+    padding-left: 2em;
+    text-align: left;
+    margin-top: 0;
+  }
 }
